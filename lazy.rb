@@ -1,7 +1,7 @@
 require 'sinatra'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require 'googlevoiceapi'
-api = GoogleVoice::Api.new('zyoung14@gmail.com', '')
+api = GoogleVoice::Api.new('zyoung14@gmail.com', 'mynameiszach')
 #require 'pry'
 
 enable :sessions
@@ -24,11 +24,11 @@ get '/:circle_name' do
 		hash.select {|k,v| b.push(v) }
 	end
 
-	# b.each do |number|
-	# 	if number != ""
-	# 		api.sms(number, session["circles"][params[:circle_name]]["message"])
-	# 	end
-	# end
+	b.each do |number|
+		if number != ""
+			api.sms(number, session["circles"][params[:circle_name]]["message"])
+		end
+	end
 
 	session["circles"][params[:circle_name]]["circle_count"] += 1
 	erb :custom, :locals => { :result => "Text has been sent! :)"}
