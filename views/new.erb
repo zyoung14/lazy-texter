@@ -1,0 +1,37 @@
+<html>
+	<head> 
+		<title>New Group</title>
+		<link rel= 'stylesheet' type='text/css' href="./style.css">
+	</head>
+
+	<body>
+		<div class="bar">
+			<a href="/"> <h2> Lazy Txtr </h2> </a>
+		</div>
+		<div class = "new">
+			<h2 class = "new_circle"> New Circle </h2>
+			<form action = '/' method = "POST"> 
+				<input class="circle_name" type="text" name="circle_name" placeholder = "Circle Name"><br>
+				<textarea rows="2" cols="34" class="message" type="text" name="message" placeholder = "Text Message"></textarea><br>
+				<table>
+					<tr>
+						<td> Name </td>
+						<td> Phone Number </td>
+					</tr><br>
+					<% @@rows_total.times do |count| %>	
+						<tr>
+							<td> 
+								<input type="text" name = "name<%=count.to_s%>"> 
+							</td>
+							<td>
+								<input type="tel" name = "digit<%=count.to_s%>">
+							</td>
+						</tr>	
+					<% end %>
+				</table><br>
+				<input type="submit" class ="new-group" name="new_group">
+			</form>
+		</div>
+	</body>
+
+</html>

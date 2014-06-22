@@ -1,0 +1,47 @@
+<html>
+	<head> 
+		<title>Lazy Txtr</title>
+		<link rel= 'stylesheet' type='text/css' href="./style.css">
+	</head>
+
+	<body>
+		<div class="bar">
+			<a href="/"> <h2> Lazy Txtr </h2> </a>
+		</div>
+		<div class = "create-new">
+			<h3>
+			 <a href = "/new">new circle</a>
+			</h3>
+		</div>
+		<section class = "circles">
+			<% result.each do |k, v| %>
+					<div class = "circle">
+						<div class = "circle-info">
+							<div class = "circle-name"> <%= k %> </div>
+							<%= v['message'] %><br>
+							<button name="edit">edit message</button>
+							<button name="add">add people</button> 
+							<button name="edit">remove people</button> 
+						</div>
+						<form action = '/' method = "POST">
+							<input name="_method" value="delete" type="hidden" />
+							<input name="circle" value = "<%= k %>" type="hidden" />
+							<input type= "submit" value = "X" class = "delete" > 
+						</form>	
+						<div class = "circle-size2">
+							<%= v['circle_count'] %>
+						</div>
+						<div class = "circle-size1">
+							<%= v['circle_size'] %>
+						</div>
+						<form>
+							<a href= "/<%= k %>">	
+								<div class="text">text 'em</div>
+							</a>
+						</form>
+					</div>
+			<% end %>
+		</section>
+	</body>
+
+</html>

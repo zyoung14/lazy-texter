@@ -1,0 +1,151 @@
+body {
+	background-color: #045692;
+	color: #C5CED5;
+	margin: 2% 0 0 0;
+	font-family: "Lucida Console", monospace;
+}
+
+.new_circle {
+	color: white;
+	text-align: center;
+	margin-right: 50px;
+}
+
+.bar, .bar a, .bar a:hover, .bar a:visited {
+	font-size: 24px;
+	color: #EA313B;
+	background-color: white;
+	margin: 0;
+	text-align: center;
+	text-decoration: none;
+	font-family: "Lucida Console";
+}
+
+.create-new {
+	text-align: center;
+}
+
+.create-new a, .create-new a:visited {
+	font-family: "Lucida Console", Monaco, monospace;
+	font-size: 26px;
+	color: white;
+	text-decoration: none;
+}
+
+.create-new a:hover {
+	font-style: italic;
+}
+
+.circle {
+    background-color: #C5CED5;
+    border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 10px;
+	margin-top: 10px;
+	width:70%;
+	min-width: 609px;
+	max-width: 850px;
+	height: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #070D25;
+}
+
+.circle:hover {
+	background-color: white;
+}
+
+.circle-name {
+	padding: 2px 0 0 0;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+.circle-info {
+	float:left;
+	margin-left: 1%;
+}
+
+.circle-size1, .circle-size2 {
+    /*make it a circle*/
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px; 
+    /*style it*/
+    text-align: center;
+    float:right;
+    color: white;
+    vertical-align: middle;
+}
+
+.circle-size1 {
+	background-color: #EA313B;
+	margin-right: 15px;
+}
+
+.circle-size2 {
+	background-color: #045692;
+	margin-right: 35px;
+}
+
+.delete {
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin: 25px 15px 25px 0;
+	background-color: #EA313B;
+	color: white;
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	text-align: center;
+}
+
+.text {
+	float: right;
+	width: 90px;
+	height: 35px;
+	margin-right: 35px;
+	background-color: green;
+	text-align: center;
+	line-height: 35px;
+	border-width: 3px;
+	border-color: black;
+	border-style: solid;
+	font-family: Monaco;
+	font-size: 14px;
+	opacity: 0.8;
+	color: black;
+}
+
+a:hover .text {
+	opacity: 1;
+}
+
+.new {
+	/*text-align: center;*/
+	margin-left: 38%;
+	margin-right: 10%;
+	width: 300px;
+	height: 100%;
+}
+
+.new-group {
+	margin-left: 95px;
+}
+
+.circle_name {
+	width: 236px;
+	margin-left: 2px;
+}
+
+.return_text {
+	text-align: center;
+	margin-top: 140px;
+	font-size: 40px;
+}

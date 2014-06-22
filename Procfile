@@ -1,0 +1,1 @@
+web: bundle exec ruby lazy.rb -p $PORT
