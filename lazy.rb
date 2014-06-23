@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require 'twilio-ruby'
 # require 'googlevoiceapi'
 #api = GoogleVoice::Api.new('zyoung14@gmail.com', 'mynameiszach')
