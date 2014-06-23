@@ -6,7 +6,7 @@ require 'twilio-ruby'
 #require 'pry'
 
 account_sid = 'AC6bb55ecdf61f02c7692ab0e2b1883bca' 
-auth_token = '02320eafb5cc10b0a95d187407a1ca11'
+auth_token = #hidden for protection
 @@client = Twilio::REST::Client.new account_sid, auth_token
 
 enable :sessions
