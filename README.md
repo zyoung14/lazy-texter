@@ -5,23 +5,19 @@ Who want to text their circles in one **easy** step
 
 ### Things to be done
 
-1. Make circles page (DONE)
-2. Make new circles page where user can input names, numbers, ideal text, and group name
-	-store info in session hash (DONE)
-<<<<<<< HEAD
-3. Post circles from session on circles page, with button "Text 'em" (DONE)
-5. Design circles site to make it prettier
-	- lists are inline, *a bit* like yearbook (DONE)
+a. fix googlevoice api bug
+b. launch on Heroku
+c. for project demo, have group with entire class on it and text everyone message at beginning, then mention how it was done
 
-5. Allow circles to be edited on edits page
+
+1. Allow circles to be edited on edits page
 	- add/delete of people arrays
 	- able to edit default message
+2. Allow multiple users of site (i.e. different Google Voice accounts)
+3. Sync with iOS Contacts/ Google Contacts
+4. Make into iPhone app
+5. Maybe have automatic groups: Family: "Dinners's Ready", Recently Added Contacts, etc.
 
-6. Connect text API functionality when circle is clicked on, with blue circle and order connected (DONE)
-
-7. tidy up edit/new page (DONE)
-8. launch on Heroku
-9. for project demo, have group with entire class on it and text everyone message at beginning, then mention how it was done
 
 
 |Group   | Message |
@@ -31,14 +27,4 @@ Who want to text their circles in one **easy** step
 |Swing & Blues peeps | Let's practice Swing and Blues |
 
 
-
-|Page | purpose |
-
-
-HTTP Verb | URL | used for 
-----------|-----|----------
-GET  |/	|displays group names in order of how many ppl with button, with option to create/delete/edit groups at bottom (DONE)
-GET | /new | display form for edit/new (DONE)
-POST |/| create/edit group with title, text, list of names & numbers
-DELETE |/ | delete group (DONE)
 

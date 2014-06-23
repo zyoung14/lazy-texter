@@ -1,12 +1,17 @@
 require 'sinatra'
-#require 'sinatra/reloader'
-require 'googlevoiceapi'
-api = GoogleVoice::Api.new('zyoung14@gmail.com', 'mynameiszach')
+require 'sinatra/reloader'
+require 'twilio-ruby'
+# require 'googlevoiceapi'
+#api = GoogleVoice::Api.new('zyoung14@gmail.com', 'mynameiszach')
 #require 'pry'
+
+account_sid = 'AC6bb55ecdf61f02c7692ab0e2b1883bca' 
+auth_token = '02320eafb5cc10b0a95d187407a1ca11'
+@@client = Twilio::REST::Client.new account_sid, auth_token
 
 enable :sessions
 enable :method_override
-@@rows_total = 10
+@@rows_total = 26
 
 get '/' do
 	session['circles'] ||= {}
@@ -18,20 +23,26 @@ get '/new' do
 end
 
 get '/:circle_name' do
-	a = session["circles"][params[:circle_name]]["names_and_numbers"]
-	b = []
-	a.each do |hash| 
+	b = Array.new
+	session["circles"][params[:circle_name]]["names_and_numbers"].each do |hash| 
 		hash.select {|k,v| b.push(v) }
 	end
 
 	b.each do |number|
 		if number != ""
-			api.sms(number, session["circles"][params[:circle_name]]["message"])
-		end
+			message = @@client.account.messages.create(:body => "Sent from Zach Young via Lazy Txtr:  " + session["circles"][params[:circle_name]]["message"],
+	 			:to => number,
+	    		:from => "+15132582662")
+	    	puts message.to
+	    end
 	end
 
 	session["circles"][params[:circle_name]]["circle_count"] += 1
-	erb :custom, :locals => { :result => "Text has been sent! :)"}
+	erb :post_text, :locals => { :result => "Text has been sent! :)"}
+end
+
+get '/:circle_name/edit' do
+	erb :edit, :locals => {:result => session["circles"][params[:circle_name]]}
 end
 
 post '/' do
@@ -55,6 +66,12 @@ post '/' do
 		"circle_count" => circle_count})
 
 	erb :index, :locals => { :result => session["circles"].sort_by { |k,v| v["circle_count"]*(-1) }  }
+end
+
+put '/' do
+	session["circles"] ||= {}
+	session["circles"][params[:circle_name]]["message"] = params[:message]
+	redirect to ('/')
 end
 
 delete '/' do
